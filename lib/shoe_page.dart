@@ -10,21 +10,28 @@ class ShoePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        centerTitle: true,
         title: Text(item.title),
       ),
-      body: Column(
-        children: [
-          AspectRatio(aspectRatio: 4/3,
-          child: Image.network(item.urlimage,
-          fit: BoxFit.cover,),),
-
-          SizedBox(height: 8,),
-
-          Text(item.title),
-
-          SizedBox(height: 8,),
-
-        ],
+      body: Container(
+        child: Center(
+          child: Column(
+            children: [
+              Expanded(
+                child: AspectRatio(
+                  aspectRatio: 4/3,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(12),
+                  child: Image.network(item.urlimage,
+                  fit: BoxFit.cover,),
+                ),
+                ),
+              ),
+             // SizedBox(height: 8,),
+              //Text(item.title),
+            ],
+          ),
+        ),
       ),
     );
   }
