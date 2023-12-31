@@ -1,5 +1,6 @@
 import 'package:card/main.dart';
 import 'package:flutter/material.dart';
+import 'list_item.dart';
 
 class ShoePage extends StatelessWidget {
   final CardItem item;
